@@ -8,10 +8,14 @@ namespace SingletonPattern
 {
     public sealed class StudentCounter
     {
+        private int _counter = 0;
 
         private static StudentCounter instance = null;
 
-        private StudentCounter() { }
+        private StudentCounter() 
+        {
+            Console.WriteLine($"Entered StudentCounter constructor for thread: {Thread.CurrentThread.ManagedThreadId}");
+        }
 
         public static StudentCounter GetInstance()
         {
@@ -25,6 +29,15 @@ namespace SingletonPattern
         public override string ToString()
         {
             return GetHashCode().ToString();
+        }
+
+        public int Counter
+        {
+            get
+            {
+                _counter++;
+                return _counter;
+            }
         }
     }
 }

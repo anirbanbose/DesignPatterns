@@ -8,56 +8,19 @@ using System.Threading.Tasks;
 namespace SingletonPattern
 {
     public class Implementation
-    {       
-        public static void ThreadsafeStudentCounterImplementation1()
+    {
+
+        public static void StudentCounterImplementation()
         {
-            Console.WriteLine($"Current thread-safe object Hashcode: {ThreadSafeStudentCounter.GetInstance().ToString()}");
-        }
-        public static void ThreadsafeStudentCounterImplementation2()
-        {
-            Console.WriteLine($"Current thread-safe object Hashcode: {ThreadSafeStudentCounter.GetInstance().ToString()}");
-        }
-        public static void ThreadsafeStudentCounterImplementation3()
-        {
-            Console.WriteLine($"Current thread-safe object Hashcode: {ThreadSafeStudentCounter.GetInstance().ToString()}");
-        }
-        public static void ThreadsafeStudentCounterImplementation4()
-        {
-            Console.WriteLine($"Current thread-safe object Hashcode: {ThreadSafeStudentCounter.GetInstance().ToString()}");
-        }
-        public static void ThreadsafeStudentCounterImplementation5()
-        {
-            Console.WriteLine($"Current thread-safe object Hashcode: {ThreadSafeStudentCounter.GetInstance().ToString()}");
-        }
-        public static void ThreadsafeStudentCounterImplementation6()
-        {
-            Console.WriteLine($"Current thread-safe object Hashcode: {ThreadSafeStudentCounter.GetInstance().ToString()}");
+            var obj = StudentCounter.GetInstance();
+            Console.WriteLine($"Current student counter value: {obj.Counter}, object Hashcode: {obj.ToString()}, and Thread Id: {Thread.CurrentThread.ManagedThreadId}");
         }
 
+        public static void ThreadsafeStudentCounterImplementation()
+        {
+            var obj = ThreadSafeStudentCounter.GetInstance();
+            Console.WriteLine($"Current counter value: {obj.Counter}, thread-safe object Hashcode: {obj.ToString()}, and Thread Id: {Thread.CurrentThread.ManagedThreadId}");
+        }
 
-        public static void NormalStudentCounterImplementation1()
-        {
-            Console.WriteLine($"Current normal object Hashcode: {StudentCounter.GetInstance().ToString()}");
-        }
-        public static void NormalStudentCounterImplementation2()
-        {
-            Console.WriteLine($"Current normal object Hashcode: {StudentCounter.GetInstance().ToString()}");
-        }
-        public static void NormalStudentCounterImplementation3()
-        {
-            Console.WriteLine($"Current normal object Hashcode: {StudentCounter.GetInstance().ToString()}");
-        }
-        public static void NormalStudentCounterImplementation4()
-        {
-            Console.WriteLine($"Current normal object Hashcode: {StudentCounter.GetInstance().ToString()}");
-        }
-        public static void NormalStudentCounterImplementation5()
-        {
-            Console.WriteLine($"Current normal object Hashcode: {StudentCounter.GetInstance().ToString()}");
-        }
-        public static void NormalStudentCounterImplementation6()
-        {
-            Console.WriteLine($"Current normal object Hashcode: {StudentCounter.GetInstance().ToString()}");
-        }
     }
 }

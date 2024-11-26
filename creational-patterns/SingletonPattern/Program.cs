@@ -4,24 +4,23 @@ using SingletonPattern;
 Console.WriteLine("Hello, World!");
 
 
+Parallel.Invoke(
+    () => Implementation.StudentCounterImplementation(),
+    () => Implementation.StudentCounterImplementation(),
+    () => Implementation.StudentCounterImplementation(),
+    () => Implementation.StudentCounterImplementation(),
+    () => Implementation.StudentCounterImplementation(),
+    () => Implementation.StudentCounterImplementation()
+    );
 
 Parallel.Invoke(
-    () => Implementation.ThreadsafeStudentCounterImplementation1(),
-    () => Implementation.ThreadsafeStudentCounterImplementation2(),
-    () => Implementation.ThreadsafeStudentCounterImplementation3(),
-    () => Implementation.ThreadsafeStudentCounterImplementation4(),
-    () => Implementation.ThreadsafeStudentCounterImplementation5(),
-    () => Implementation.ThreadsafeStudentCounterImplementation6()
+    () => Implementation.ThreadsafeStudentCounterImplementation(),
+    () => Implementation.ThreadsafeStudentCounterImplementation(),
+    () => Implementation.ThreadsafeStudentCounterImplementation(),
+    () => Implementation.ThreadsafeStudentCounterImplementation(),
+    () => Implementation.ThreadsafeStudentCounterImplementation(),
+    () => Implementation.ThreadsafeStudentCounterImplementation()
     );
 
 
 
-
-Parallel.Invoke(
-    () => Implementation.NormalStudentCounterImplementation1(),
-    () => Implementation.NormalStudentCounterImplementation2(),
-    () => Implementation.NormalStudentCounterImplementation3(),
-    () => Implementation.NormalStudentCounterImplementation4(),
-    () => Implementation.NormalStudentCounterImplementation5(),
-    () => Implementation.NormalStudentCounterImplementation6()
-    );
